@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/etc/X11/xinit'
+let g:netrw_dirhist_7='/etc/X11'
+let g:netrw_dirhist_6='/home/gaba/Downloads/AgentSmith-HIDS'
+let g:netrw_dirhist_5='/home/gaba/Downloads/AgentSmith-HUB/src/rule_engine/custom_func/rpc/gen-go/server'
+let g:netrw_dirhist_4='/home/gaba/Downloads/AgentSmith-HUB/src/rule_engine/custom_func/rpc/gen-go'
+let g:netrw_dirhist_3='/home/gaba/Downloads/AgentSmith-HUB/src/rule_engine/custom_func/rpc/py'
+let g:netrw_dirhist_2='/home/gaba/.GoLand2019.2/config/workspace'
+let g:netrw_dirhist_1='/home/gaba/.config/i3'
