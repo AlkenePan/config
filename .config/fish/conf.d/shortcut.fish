@@ -1,0 +1,12 @@
+echo -n Setting abbreviations...
+abbr g 'git'
+abbr n 'nvim'
+abbr s 'sudo'
+abbr p 'proxychains'
+abbr gy 'cd ~/go/src/youzoo'
+abbr gh 'cd ~/go/src/AgentSmith-HUB'
+abbr lock 'i3lock-fancy -gpf Sauce-Code-Pro-Black-Nerd-Font-Complete -t "2333333"'
+abbr l 'exa -lh'
+abbr md 'open "http://localhost:3000"'
+abbr config 'git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+echo 'Done'
