@@ -27,7 +27,7 @@ set fillchars=vert:\ ,stl:\ ,stlnc:\  "注释
 set list
 set listchars=eol:¬,tab:▸\ ,trail:•,nbsp:␣,extends:»,precedes:«
 if has('nvim')
-  set listchars+=space:.
+"  set listchars+=space:.
   " enable neovim true color support
   silent! set termguicolors
 endif
