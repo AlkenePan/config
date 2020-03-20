@@ -5,6 +5,7 @@ rofi.color-enabled: true
 # rofi.color-active: argb:00252936, #252936, argb:00252936, argb:009575cd, #ffc000
 # rofi.color-urgent: argb:00252936, #ff0000, argb:00252936, argb:00252936, #ff0000
 
+# git clone https://github.com/bardisty/gruvbox-rofi ~/.config/rofi/themes/gruvbox
 rofi.theme: ~/.config/rofi/themes/gruvbox/gruvbox-dark-hard.rasi
 
 rofi.width: 40

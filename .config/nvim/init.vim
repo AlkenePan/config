@@ -197,8 +197,6 @@ set ttyfast
 set re=1
 set lazyredraw
 
-set re=1
-
 
 " Time out on key codes but not mappings
 set notimeout
@@ -248,11 +246,15 @@ set hidden
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_hoverPreview = "Never"
 let g:LanguageClient_hasSnippetSupport = 0
+let g:LanguageClient_loggingFile = expand('/tmp/lsplc.log')
+" let $LANGUAGECLIENT_DEBUG=1
+let g:LanguageClient_loggingLevel='ERROR'
+
 set completeopt-=preview
 
 let g:LanguageClient_serverCommands = {
     \ 'python': ['pyls', '--log-file=/tmp/LanguageServer.log'],
-    \ 'go': ['gopls', '-debug'],
+    \ 'go': ['gopls'],
     \ 'c': ['ccls', '--log-file=/tmp/cc.log'],
     \ 'cpp': ['ccls', '--log-file=/tmp/cc.log'],
     \ 'cuda': ['ccls', '--log-file=/tmp/cc.log'],
@@ -266,6 +268,15 @@ nnoremap <silent> pep :call LanguageClient#textDocument_formatting()<CR>
 
 " Go
 let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
 
 
 augroup LanguageClient_config
