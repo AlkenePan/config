@@ -203,8 +203,8 @@ set notimeout
 set ttimeout
 set ttimeoutlen=100
 
-let g:python_host_prog = "/usr/bin/python2"
-let g:python3_host_prog = "/usr/bin/python3"
+let g:python_host_prog = "/usr/bin/python"
+let g:python3_host_prog = "/usr/local/bin/python3"
 
 "============================
 " plug
@@ -253,6 +253,7 @@ let g:LanguageClient_loggingLevel='ERROR'
 set completeopt-=preview
 
 let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'python': ['pyls', '--log-file=/tmp/LanguageServer.log'],
     \ 'go': ['gopls'],
     \ 'c': ['ccls', '--log-file=/tmp/cc.log'],
@@ -293,7 +294,9 @@ augroup END
 " INTEL
 "
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+call deoplete#custom#option({
+    \ 'smart_case': v:true,
+    \ })
 set noshowmode
 let g:echodoc#enable_at_startup = 1
 
