@@ -1,5 +1,6 @@
 ;;; init-theme.el --- theme initialize
-;;; Commentary
+;;; Commentary:
+;;; Code:
 (use-package gruvbox-theme
   :ensure t
   :init

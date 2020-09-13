@@ -1,4 +1,7 @@
+;;; package --- Summary
+;;; Commentary:
 ;;; LSP CCLS
+;;; Code:
 (use-package ccls
   :ensure t
   :config
@@ -10,3 +13,4 @@
     (lambda () (require 'ccls) (lsp))))
 
 (provide 'init-ccls)
+;;; init-ccls ends here

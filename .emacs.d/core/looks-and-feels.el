@@ -1,6 +1,9 @@
 ;; high bar
-(scroll-bar-mode -2)
-(tool-bar-mode -1)
+(if (display-graphic-p)
+    (progn
+      (tool-bar-mode -1)
+      (scroll-bar-mode -1)))
+
 (menu-bar-mode -1)
 
 ;; yes and no
@@ -59,6 +62,6 @@
 (size-indication-mode t)
 
 ;;; font
-(set-frame-font "JetBrainsMono 14" nil t)
+(set-frame-font "JetBrains Mono 14" nil t)
 
 (provide 'looks-and-feels)

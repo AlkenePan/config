@@ -50,6 +50,7 @@
 (add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 ;;; cc/cpp/objc
 (require 'init-ccls)
+(require 'init-rust)
 
 ;;;
 (custom-set-variables

@@ -1,3 +1,7 @@
+;;; package -- Summary
+;;; Commentary:
+;;; Code:
+
 ;; Autocomplete and syntax checking
 (use-package company
   :ensure t
@@ -21,3 +25,4 @@
   :config (push 'company-lsp company-backends))
 
 (provide 'intelligence)
+;;; intelligence ends here

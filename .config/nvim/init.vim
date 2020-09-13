@@ -1,3 +1,6 @@
+" init.vim - Neovim Config
+" Maintainer:   Gaba <alkenepan@gmail.com>
+" Version:      0.8
 "=========================
 " 兼容处理
 "
@@ -173,6 +176,7 @@ set nowrapscan
 " 去掉搜索高亮 search/symbol highlight persist remove
 " nnoremap <leader>sc :set hlsearch! hlsearch?<CR>
 " temporarily disable search highlighting until the next search
+let mapleader=" "
 nnoremap <leader>sc :nohlsearch<CR>
 
 "============================
@@ -254,7 +258,8 @@ let g:LanguageClient_serverStderr = expand('/tmp/lsp.log')
 " let $LANGUAGECLIENT_DEBUG=1
 let g:LanguageClient_loggingLevel='INFO'
 
-set completeopt-=preview
+" set completeopt-=preview
+set completeopt+=menuone,noinsert,noselect
 
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['env', 'http_proxy=10.20.47.147:3128', 'https_proxy=10.20.47.147:3128', 'rust-analyzer'],
@@ -265,7 +270,7 @@ let g:LanguageClient_serverCommands = {
     \ 'cuda': ['ccls', '--log-file=/tmp/cc.log'],
     \ 'objc': ['ccls', '--log-file=/tmp/cc.log'],
     \ }
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> cm :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> ca :call LanguageClient#textDocument_codeAction()<CR>
