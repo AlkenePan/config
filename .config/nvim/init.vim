@@ -31,6 +31,7 @@ if has('nvim')
   " enable neovim true color support
   silent! set termguicolors
 endif
+set notermguicolors
 set diffopt+=vertical,context:3,foldcolumn:0
 set iskeyword-=.                    " '.' is an end of word designator
 set iskeyword-=#                    " '#' is an end of word designator
@@ -203,8 +204,7 @@ set notimeout
 set ttimeout
 set ttimeoutlen=100
 
-let g:python_host_prog = "/usr/bin/python"
-let g:python3_host_prog = "/usr/local/bin/python3"
+let g:python3_host_prog = "/usr/local/bin/python3.8"
 
 "============================
 " plug
@@ -217,6 +217,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'mcchrish/nnn.vim'
 Plug 'junegunn/fzf'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
@@ -227,6 +228,8 @@ Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'roxma/nvim-yarp'
 Plug 'cespare/vim-toml'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'sebastianmarkow/deoplete-rust'
+Plug 'rust-lang/rust.vim'
 " Initialize plugin system
 call plug#end()
 filetype plugin indent on
@@ -246,14 +249,15 @@ set hidden
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_hoverPreview = "Never"
 let g:LanguageClient_hasSnippetSupport = 0
-let g:LanguageClient_loggingFile = expand('/tmp/lsplc.log')
+let g:LanguageClient_loggingFile = expand('/tmp/lsp.log')
+let g:LanguageClient_serverStderr = expand('/tmp/lsp.log')
 " let $LANGUAGECLIENT_DEBUG=1
-let g:LanguageClient_loggingLevel='ERROR'
+let g:LanguageClient_loggingLevel='INFO'
 
 set completeopt-=preview
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['env', 'http_proxy=10.20.47.147:3128', 'https_proxy=10.20.47.147:3128', 'rust-analyzer'],
     \ 'python': ['pyls', '--log-file=/tmp/LanguageServer.log'],
     \ 'go': ['gopls'],
     \ 'c': ['ccls', '--log-file=/tmp/cc.log'],
@@ -298,6 +302,14 @@ call deoplete#custom#option({
     \ 'smart_case': v:true,
     \ })
 set noshowmode
+
+" rust
+" let g:deoplete#sources#rust#racer_binary='/path/to/racer'
+" let g:deoplete#sources#rust#rust_source_path='/path/to/rust/src'
+" let g:deoplete#sources#rust#show_duplicates=1
+" let g:deoplete#sources#rust#disable_keymap=1
+" let g:deoplete#sources#rust#documentation_max_height=20
+
 let g:echodoc#enable_at_startup = 1
 
 
