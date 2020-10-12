@@ -11,4 +11,23 @@
   :config
   (evil-mode))
 
+(use-package general
+  :ensure t
+  :config
+  (general-define-key
+   "M-s" 'isearch-forward
+   "M-b" '(:keymap nil :which-key "buffer")
+   "M-b i" 'ibuffer
+   "M-b b" 'ivy-switch-buffer
+   "M-b k" 'kill-this-buffer
+   "M-f" '(:keymap nil :which-key "files")
+   "M-f f" 'find-file)
+  (general-create-definer edit-leader-def
+			  :prefix "SPC"
+			  :states '(normal visual emacs))
+  (edit-leader-def
+   "TAB" 'next-buffer
+   "C" '(:ignore t :which-key "check")
+   "Cn" 'flycheck-next-error))
+
 (provide 'init-evil)

@@ -17,7 +17,13 @@
   (setq flycheck-emacs-lisp-load-path 'inherit))
 
 ;; LSP
-(use-package lsp-mode :commands lsp :ensure t)
+(use-package lsp-mode
+  :commands lsp
+  :ensure t)
+;  :config
+;  (setq rustic-lsp-server 'rust-analyzer)
+;  (setq lsp-rust-server 'rust-analyzer))
+
 (use-package lsp-ui :commands lsp-ui-mode :ensure t)
 (use-package company-lsp
   :ensure t
