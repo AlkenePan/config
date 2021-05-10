@@ -23,6 +23,10 @@
 ;  :config
 ;  (setq rustic-lsp-server 'rust-analyzer)
 ;  (setq lsp-rust-server 'rust-analyzer))
+(with-eval-after-load 'lsp-mode
+    (setq lsp-restart 'auto-restart)
+    (setq lsp-headerline-arrow "|>")
+)
 
 (use-package lsp-ui :commands lsp-ui-mode :ensure t)
 (use-package company-lsp

@@ -27,7 +27,12 @@
 			  :states '(normal visual emacs))
   (edit-leader-def
    "TAB" 'next-buffer
-   "C" '(:ignore t :which-key "check")
-   "Cn" 'flycheck-next-error))
+   "c" '(:ignore t :which-key "Check")
+   "cn" 'flycheck-next-error
+   "b" '(:ingore t :which-key "Buffer")
+   "bb" 'ivy-switch-buffer
+   "bk" 'kill-this-buffer
+   "br" 'revert-buffer))
 
 (provide 'init-evil)
+;;; init-evil.el ends here

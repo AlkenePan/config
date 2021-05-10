@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; LSP CCLS
 ;;; Code:
+(setq ccls-executable "~/.local/bin/ccls")
+
 (use-package ccls
   :ensure t
   :config
