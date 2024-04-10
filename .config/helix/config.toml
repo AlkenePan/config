@@ -1,0 +1,20 @@
+[editor]
+cursorline = true
+auto-save = true
+bufferline = "multiple"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[keys.insert]
+C-a = "goto_line_start"
+C-e = "goto_line_end"
+C-n = "move_line_down"
+C-p = "move_line_up"
+
+[keys.normal]
+C-a = "goto_line_start"
+C-e = "goto_line_end"
+C-n = "move_line_down"
+C-p = "move_line_up"
